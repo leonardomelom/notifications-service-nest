@@ -1,14 +1,13 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './infra/app.controller';
-
-import { PrismaService } from './infra/prisma.service';
+import { DatabaseModule } from './infra/database/database.module';
+import { HttpModule } from './infra/http/http.module';
 
 @Module({
-  imports: [],
+  imports: [HttpModule, DatabaseModule],
   //controller = lida com as chamadas http: get, post e put(rotas)
-  controllers: [AppController],
+  // controllers: [AppController],
   //service = classe generica(conexão com banco de dados, repos. Define funcionalidades como funcoes)
-  providers: [PrismaService],
+  // providers: [PrismaService],
 })
 export class AppModule {}
 //injeção de dependencia. Quem instancia a classe, injeta as dependecias. Ex: controller chama appService(prodivder) essa tendo o decorator @injectable. Nest passa para o controller a classe como parametro
