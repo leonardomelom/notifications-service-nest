@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { InMemoryNotificationsRepository } from '../../../test/repositories/in-memory-notification-repositorie';
+import { InMemoryNotificationsRepository } from '@test/repositories/in-memory-notification-repositorie';
 import { SendNotification } from './send-notification-use-case';
 
 
